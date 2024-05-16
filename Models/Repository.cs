@@ -34,7 +34,34 @@ namespace   FormsApp.Models{
             _products.Add(entity);
         }
 
+         public static void  EditProduct(Product upDateProduct){
 
+            var entity = _products.FirstOrDefault(p => p.ProductId == upDateProduct.ProductId ); 
+
+            if(entity !=null ) {
+
+                entity.Name = upDateProduct.Name;
+                entity.Price = upDateProduct.Price;
+                entity.IsActive = upDateProduct.IsActive;
+                entity.CategoryId = upDateProduct.CategoryId;
+                entity.Image = upDateProduct.Image;
+                
+
+            }
+            
+
+         }
+
+
+        public static void DeleteProduct(Product deletedProduct)
+        {
+            var entity = _products.FirstOrDefault(p => p.ProductId == deletedProduct.ProductId);
+
+            if(entity != null) 
+            {
+                _products.Remove(entity);
+            }
+        }
 
 
 

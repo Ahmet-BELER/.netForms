@@ -15,7 +15,7 @@ namespace FormsApp.Models{
         [Display(Name = "Fiyat")]
         public decimal Price { get; set; }
          
-           [Required]
+    
          [Display(Name = "Foto")]
         public string ?  Image { get; set; } 
       
@@ -23,11 +23,13 @@ namespace FormsApp.Models{
         public bool IsActive { get; set; }
 
 
-          [Required]
+         [Required]
          [Display(Name = "Category")]
 
 
         public int ?  CategoryId { get; set; }
+
+        // public IFormFile  ImageFile{ get; set; }
     }
 
 }
